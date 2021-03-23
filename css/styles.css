@@ -1,3 +1,84 @@
+/* * {
+  background-color: #f2f2f2;
+  color: #111;
+} */
+/*
+  Default background is WHITE, default text is BLACK
+  See the bottom of this CSS for the "dark mode" class and other colors
+*/
+
+/****
+ROUND SLIDER STYLING
+****/
+.dark-mode-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.dark-mode-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.round-slider {
+/* The slider itself #1 */
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+/* Rounding the slider #1 */
+  border-radius: 34px;
+}
+
+.round-slider:before {/* This is a "pseudo-class" that renders in the DOM "before" the .round-slider class above. */
+/* The slider itself #2 */
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+/* Rounding the slider #2 */
+  border-radius: 50%;
+}
+
+/* The styling for when the slider is ticked */
+input:checked + .round-slider {/* " [+] Selects the first <p> element that is placed immediately after <div> elements" -- W3Schools CSS Selector Reference */
+  background-color: #111;
+}
+
+input:focus + .round-slider {
+  box-shadow: 0 0 1px #111;
+}
+
+input:checked + .round-slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/****
+END OF ROUND SLIDER STYLING
+****/
+
+/* Dark mode */
+.dark-mode {
+  background-color: #111;
+  color: #f2f2f2;
+}
+
 .green-background {
   background-color: green;
 }
